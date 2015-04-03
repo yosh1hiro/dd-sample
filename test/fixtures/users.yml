@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  password_digest: MyString
+  email: MyString
+  gender: MyString
+  occupation: MyString
+  purpose: MyString
+  height: 1.5
+  initial_weight: 1.5
+  target_weight: 1.5
+  current_weight: 1.5
+  loss_rate: 1.5
+  current_bmi: 1.5
+  ticket_count: 1
+  target_disease: 1
+  birthday: 2015-03-31
+  auto_login_token: MyString
+  initial_bmi: 1.5
+  pro_edition: false
+
+two:
+  name: MyString
+  password_digest: MyString
+  email: MyString
+  gender: MyString
+  occupation: MyString
+  purpose: MyString
+  height: 1.5
+  initial_weight: 1.5
+  target_weight: 1.5
+  current_weight: 1.5
+  loss_rate: 1.5
+  current_bmi: 1.5
+  ticket_count: 1
+  target_disease: 1
+  birthday: 2015-03-31
+  auto_login_token: MyString
+  initial_bmi: 1.5
+  pro_edition: false

@@ -1,0 +1,61 @@
+<%= form_for(@level) do |f| %>
+  <% if @level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@level.errors.count, "error") %> prohibited this level from being saved:</h2>
+
+      <ul>
+      <% @level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :challenge_id %><br>
+    <%= f.number_field :challenge_id %>
+  </div>
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.number_field :group %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br>
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :stage %><br>
+    <%= f.number_field :stage %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br>
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :tips %><br>
+    <%= f.text_field :tips %>
+  </div>
+  <div class="field">
+    <%= f.label :star %><br>
+    <%= f.number_field :star %>
+  </div>
+  <div class="field">
+    <%= f.label :term %><br>
+    <%= f.text_field :term %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

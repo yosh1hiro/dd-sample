@@ -1,0 +1,41 @@
+class AddColumnToUser < ActiveRecord::Migration
+  def change
+    add_column :users, :weight_at_age_twenty, :integer
+    add_column :users, :max_weight, :integer
+    add_column :users, :age_of_max_weight, :integer
+    add_column :users, :reason, :string
+    add_column :users, :how_much_lose_weight, :integer
+    add_column :users, :intensity_of_losing, :integer
+    add_column :users, :sleep_time, :integer
+    add_column :users, :sleep_comment, :string
+    add_column :users, :alcohole, :string
+    add_column :users, :how_much_alcohole, :integer
+    add_column :users, :frequency_in_drink, :integer
+    add_column :users, :exercising_custom, :string
+    add_column :users, :club_activity, :string
+    add_column :users, :active_of_work, :integer
+    add_column :users, :breakfast_custom, :integer
+    add_column :users, :breakfast_time, :integer
+    add_column :users, :breakfast_staple, :string
+    add_column :users, :lunch_custom, :integer
+    add_column :users, :lunch_time, :integer
+    add_column :users, :lunch_staple, :string
+    add_column :users, :dinner_custom, :integer
+    add_column :users, :dinner_time, :integer
+    add_column :users, :dinner_staple, :string
+    add_column :users, :between_meal, :integer
+    add_column :users, :between_time, :integer
+    add_column :users, :between_food, :string
+    add_column :users, :midnight_meal, :integer
+    add_column :users, :midnight_time, :integer
+    add_column :users, :midnight_food, :string
+    add_column :users, :illness, :string
+    add_column :users, :medicine, :string
+    add_column :users, :allergy, :string
+    add_column :users, :stress, :string
+    add_column :users, :smoking_custom, :integer
+    add_column :users, :smoking_condition, :string
+    add_column :users, :contact_id, :string
+    add_column :users, :doctor, :boolean
+  end
+end

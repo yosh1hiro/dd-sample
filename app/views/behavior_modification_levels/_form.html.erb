@@ -1,0 +1,97 @@
+<%= form_for(@behavior_modification_level) do |f| %>
+  <% if @behavior_modification_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@behavior_modification_level.errors.count, "error") %> prohibited this behavior_modification_level from being saved:</h2>
+
+      <ul>
+      <% @behavior_modification_level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :green %><br>
+    <%= f.number_field :green %>
+  </div>
+  <div class="field">
+    <%= f.label :low_gi %><br>
+    <%= f.number_field :low_gi %>
+  </div>
+  <div class="field">
+    <%= f.label :oil %><br>
+    <%= f.number_field :oil %>
+  </div>
+  <div class="field">
+    <%= f.label :balance %><br>
+    <%= f.number_field :balance %>
+  </div>
+  <div class="field">
+    <%= f.label :order %><br>
+    <%= f.number_field :order %>
+  </div>
+  <div class="field">
+    <%= f.label :light %><br>
+    <%= f.number_field :light %>
+  </div>
+  <div class="field">
+    <%= f.label :drink %><br>
+    <%= f.number_field :drink %>
+  </div>
+  <div class="field">
+    <%= f.label :alcohol %><br>
+    <%= f.number_field :alcohol %>
+  </div>
+  <div class="field">
+    <%= f.label :morning %><br>
+    <%= f.number_field :morning %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner %><br>
+    <%= f.number_field :dinner %>
+  </div>
+  <div class="field">
+    <%= f.label :snack %><br>
+    <%= f.number_field :snack %>
+  </div>
+  <div class="field">
+    <%= f.label :mental %><br>
+    <%= f.number_field :mental %>
+  </div>
+  <div class="field">
+    <%= f.label :midnight %><br>
+    <%= f.number_field :midnight %>
+  </div>
+  <div class="field">
+    <%= f.label :suger %><br>
+    <%= f.number_field :suger %>
+  </div>
+  <div class="field">
+    <%= f.label :pose %><br>
+    <%= f.number_field :pose %>
+  </div>
+  <div class="field">
+    <%= f.label :life %><br>
+    <%= f.number_field :life %>
+  </div>
+  <div class="field">
+    <%= f.label :muscle %><br>
+    <%= f.number_field :muscle %>
+  </div>
+  <div class="field">
+    <%= f.label :jogging %><br>
+    <%= f.number_field :jogging %>
+  </div>
+  <div class="field">
+    <%= f.label :sports %><br>
+    <%= f.number_field :sports %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @achievement.user_id %>
+</p>
+
+<p>
+  <strong>Challenge:</strong>
+  <%= @achievement.challenge_id %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @achievement.level_id %>
+</p>
+
+<p>
+  <strong>Star:</strong>
+  <%= @achievement.star %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @achievement.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @achievement.month %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @achievement.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @achievement.time %>
+</p>
+
+<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
+<%= link_to 'Back', achievements_path %>

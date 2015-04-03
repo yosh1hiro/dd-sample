@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @challenge.group %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @challenge.caption %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @challenge.description %>
+</p>
+
+<p>
+  <strong>Description 1:</strong>
+  <%= @challenge.description_1 %>
+</p>
+
+<p>
+  <strong>Description 2:</strong>
+  <%= @challenge.description_2 %>
+</p>
+
+<p>
+  <strong>Description 3:</strong>
+  <%= @challenge.description_3 %>
+</p>
+
+<p>
+  <strong>Description 4:</strong>
+  <%= @challenge.description_4 %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @challenge.comment %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @challenge.category %>
+</p>
+
+<p>
+  <strong>Param 0:</strong>
+  <%= @challenge.param_0 %>
+</p>
+
+<p>
+  <strong>Param 1:</strong>
+  <%= @challenge.param_1 %>
+</p>
+
+<p>
+  <strong>Param 2:</strong>
+  <%= @challenge.param_2 %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @challenge.image %>
+</p>
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>

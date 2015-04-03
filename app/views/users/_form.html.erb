@@ -1,0 +1,89 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :password_digest %><br>
+    <%= f.text_field :password_digest %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose %><br>
+    <%= f.text_field :purpose %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :initial_weight %><br>
+    <%= f.text_field :initial_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :target_weight %><br>
+    <%= f.text_field :target_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :current_weight %><br>
+    <%= f.text_field :current_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :loss_rate %><br>
+    <%= f.text_field :loss_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :current_bmi %><br>
+    <%= f.text_field :current_bmi %>
+  </div>
+  <div class="field">
+    <%= f.label :ticket_count %><br>
+    <%= f.number_field :ticket_count %>
+  </div>
+  <div class="field">
+    <%= f.label :target_disease %><br>
+    <%= f.number_field :target_disease %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :auto_login_token %><br>
+    <%= f.text_field :auto_login_token %>
+  </div>
+  <div class="field">
+    <%= f.label :initial_bmi %><br>
+    <%= f.text_field :initial_bmi %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_edition %><br>
+    <%= f.check_box :pro_edition %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,63 @@
+<h1>Listing behavior_modification_levels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Green</th>
+      <th>Low gi</th>
+      <th>Oil</th>
+      <th>Balance</th>
+      <th>Order</th>
+      <th>Light</th>
+      <th>Drink</th>
+      <th>Alcohol</th>
+      <th>Morning</th>
+      <th>Dinner</th>
+      <th>Snack</th>
+      <th>Mental</th>
+      <th>Midnight</th>
+      <th>Suger</th>
+      <th>Pose</th>
+      <th>Life</th>
+      <th>Muscle</th>
+      <th>Jogging</th>
+      <th>Sports</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @behavior_modification_levels.each do |behavior_modification_level| %>
+      <tr>
+        <td><%= behavior_modification_level.user_id %></td>
+        <td><%= behavior_modification_level.green %></td>
+        <td><%= behavior_modification_level.low_gi %></td>
+        <td><%= behavior_modification_level.oil %></td>
+        <td><%= behavior_modification_level.balance %></td>
+        <td><%= behavior_modification_level.order %></td>
+        <td><%= behavior_modification_level.light %></td>
+        <td><%= behavior_modification_level.drink %></td>
+        <td><%= behavior_modification_level.alcohol %></td>
+        <td><%= behavior_modification_level.morning %></td>
+        <td><%= behavior_modification_level.dinner %></td>
+        <td><%= behavior_modification_level.snack %></td>
+        <td><%= behavior_modification_level.mental %></td>
+        <td><%= behavior_modification_level.midnight %></td>
+        <td><%= behavior_modification_level.suger %></td>
+        <td><%= behavior_modification_level.pose %></td>
+        <td><%= behavior_modification_level.life %></td>
+        <td><%= behavior_modification_level.muscle %></td>
+        <td><%= behavior_modification_level.jogging %></td>
+        <td><%= behavior_modification_level.sports %></td>
+        <td><%= link_to 'Show', behavior_modification_level %></td>
+        <td><%= link_to 'Edit', edit_behavior_modification_level_path(behavior_modification_level) %></td>
+        <td><%= link_to 'Destroy', behavior_modification_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Behavior modification level', new_behavior_modification_level_path %>

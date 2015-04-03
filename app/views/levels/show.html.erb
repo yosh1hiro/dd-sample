@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Challenge:</strong>
+  <%= @level.challenge_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @level.group %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @level.level %>
+</p>
+
+<p>
+  <strong>Stage:</strong>
+  <%= @level.stage %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @level.rank %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @level.caption %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @level.description %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @level.comment %>
+</p>
+
+<p>
+  <strong>Tips:</strong>
+  <%= @level.tips %>
+</p>
+
+<p>
+  <strong>Star:</strong>
+  <%= @level.star %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @level.term %>
+</p>
+
+<%= link_to 'Edit', edit_level_path(@level) %> |
+<%= link_to 'Back', levels_path %>

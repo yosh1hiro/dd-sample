@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @user.occupation %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @user.purpose %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @user.height %>
+</p>
+
+<p>
+  <strong>Initial weight:</strong>
+  <%= @user.initial_weight %>
+</p>
+
+<p>
+  <strong>Target weight:</strong>
+  <%= @user.target_weight %>
+</p>
+
+<p>
+  <strong>Current weight:</strong>
+  <%= @user.current_weight %>
+</p>
+
+<p>
+  <strong>Loss rate:</strong>
+  <%= @user.loss_rate %>
+</p>
+
+<p>
+  <strong>Current bmi:</strong>
+  <%= @user.current_bmi %>
+</p>
+
+<p>
+  <strong>Ticket count:</strong>
+  <%= @user.ticket_count %>
+</p>
+
+<p>
+  <strong>Target disease:</strong>
+  <%= @user.target_disease %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @user.birthday %>
+</p>
+
+<p>
+  <strong>Auto login token:</strong>
+  <%= @user.auto_login_token %>
+</p>
+
+<p>
+  <strong>Initial bmi:</strong>
+  <%= @user.initial_bmi %>
+</p>
+
+<p>
+  <strong>Pro edition:</strong>
+  <%= @user.pro_edition %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

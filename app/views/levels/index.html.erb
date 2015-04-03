@@ -1,0 +1,45 @@
+<h1>Listing levels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Challenge</th>
+      <th>Group</th>
+      <th>Level</th>
+      <th>Stage</th>
+      <th>Rank</th>
+      <th>Caption</th>
+      <th>Description</th>
+      <th>Comment</th>
+      <th>Tips</th>
+      <th>Star</th>
+      <th>Term</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @levels.each do |level| %>
+      <tr>
+        <td><%= level.challenge_id %></td>
+        <td><%= level.group %></td>
+        <td><%= level.level %></td>
+        <td><%= level.stage %></td>
+        <td><%= level.rank %></td>
+        <td><%= level.caption %></td>
+        <td><%= level.description %></td>
+        <td><%= level.comment %></td>
+        <td><%= level.tips %></td>
+        <td><%= level.star %></td>
+        <td><%= level.term %></td>
+        <td><%= link_to 'Show', level %></td>
+        <td><%= link_to 'Edit', edit_level_path(level) %></td>
+        <td><%= link_to 'Destroy', level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Level', new_level_path %>

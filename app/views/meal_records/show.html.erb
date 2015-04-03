@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @meal_record.food_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @meal_record.user_id %>
+</p>
+
+<p>
+  <strong>Meal code:</strong>
+  <%= @meal_record.meal_code %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @meal_record.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @meal_record.month %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @meal_record.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @meal_record.time %>
+</p>
+
+<%= link_to 'Edit', edit_meal_record_path(@meal_record) %> |
+<%= link_to 'Back', meal_records_path %>
