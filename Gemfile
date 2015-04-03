@@ -22,7 +22,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# gem 'mysql2'
 gem 'bootstrap-sass'
 # RailsConfig helps you easily manage environment specific Rails settings in an easy and usable manner
 gem 'rails_config'
@@ -38,7 +37,7 @@ gem 'bcrypt'
 gem 'yaml_db'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
