@@ -18,7 +18,18 @@ Rails.application.routes.draw do
 
   resources :behavior_modification_levels
 
-  resources :users
+  resources :users do
+    member do 
+      get 'new_diet_information'
+      put 'diet_information'
+      get 'new_lifestyle_information'
+      put 'lifestyle_information'
+      get 'new_custom_information'
+      put 'custom_information'
+      get 'new_illness_information'
+      put 'illness_information'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

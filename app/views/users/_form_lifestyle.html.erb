@@ -1,0 +1,53 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <%= @user.errors.full_message.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sleep_time, "就寝時間" %>
+    <%= f.time_select :sleep_time %>
+  </div>
+  <div class="field">
+    <%= f.label :wake_time, "起床時間" %>
+    <%= f.time_select :wake_time %>
+  </div>
+  <div class="field">
+    <%= f.label :sleep_comment, "睡眠に問題はありますか" %>
+    <%= f.text_field :sleep_comment %>
+  </div>
+  <div class="field">
+    <%= f.label :alcohole, "お酒は飲みますか。種類とおおよその量をお答え下さい" %>
+    <%= f.text_field :alcohole %>
+  </div>
+  <div class="field">
+    <%= f.label :how_much_alcohole, "どのくらい飲みますか(杯/日)" %>
+    <%= f.range_field :how_much_alcohole, in: 0..10 %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency_in_drink, "週に何日、お酒を飲みますか" %>
+    <%= f.range_field :frequency_in_drink, in: 0..7 %>
+  </div>
+  <div class="field">
+    <%= f.label :exercising_custom, "運動習慣はありますか？運動の種類と頻度をお答え下さい" %>
+    <%= f.text_field :exercising_custom, placeholder: "1時間のランニングを週に2回" %>
+  </div>
+  <div class="field">
+    <%= f.label :club_activity, "学生時代は運動していましたか" %>
+    <%= f.text_field :club_activity %>
+  </div>
+  <div class="field">
+    <%= f.label :active_of_work, "仕事での活動量を下記からお選びください" %>
+    <%= f.select :active_of_work, {"軽作業(デスクワーク、家事など)" => "0", "普通の作業(立ち仕事など)" => "1", "重作業(運搬、力仕事など)" => "2"} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

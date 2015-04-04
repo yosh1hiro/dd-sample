@@ -61,6 +61,60 @@ class UsersController < ApplicationController
     end
   end
 
+  def new_diet_information
+  end
+
+  def diet_information
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'ユーザー情報を更新しました' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def new_lifestyle_information
+  end
+
+  def lifestyle_information
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'ユーザー情報を更新しました' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+  end
+
+  def new_custom_information
+  end
+
+  def custom_information
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'ユーザー情報を更新しました' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+  end
+
+  def new_illness_information
+  end
+
+  def illness_information
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'ユーザー情報を更新しました' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -69,6 +123,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password_digest, :email, :gender, :occupation, :purpose, :height, :initial_weight, :target_weight, :current_weight, :loss_rate, :current_bmi, :ticket_count, :target_disease, :birthday, :auto_login_token, :initial_bmi, :pro_edition, :weight_at_age_twenty, :max_weight, :age_of_max_weight, :reason, :how_much_lose_weight, :intensity_of_losing, :sleep_time, :sleep_comment, :alcohole, :how_much_alcohole, :frequency_in_drink, :exercising_custom, :club_activity, :active_of_work, :breakfast_custom, :breakfast_time, :breakfast_staple)
+      params.require(:user).permit(:name, :password_digest, :email, :gender, :occupation, :purpose, :height, :initial_weight, :target_weight, :current_weight, :loss_rate, :current_bmi, :ticket_count, :target_disease, :birthday, :auto_login_token, :initial_bmi, :pro_edition, :weight_at_age_twenty, :max_weight, :age_of_max_weight, :reason, :how_much_lose_weight, :intensity_of_losing, :sleep_time, :sleep_comment, :alcohole, :how_much_alcohole, :frequency_in_drink, :exercising_custom, :club_activity, :active_of_work, :breakfast_custom, :breakfast_time, :breakfast_staple, :lunch_custom, :lunch_time, :lunch_staple, :dinner_custom, :dinner_time, :dinner_staple, :between_meal, :between_time, :between_food, :midnight_meal, :midnight_time, :midnight_food, :illness, :medicine, :allergy, :stress, :smoking_custom, :smoking_condition, :contact_id, :doctor)
     end
 end

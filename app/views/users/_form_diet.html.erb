@@ -1,0 +1,60 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gender, "性別" %>
+    <%= f.select :gender, {"男性" => 0, "女性" => 1} %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday, "誕生日" %>
+    <%= f.date_field :birthday, value: Time.zone.local(1980, 1, 1) %>
+  </div>
+  <div class="field">
+    <%= f.label :height, "身長(cm)" %>
+    <%= f.number_field :height, in: 145..200, step: 0.5, value: 170 %>
+  </div>
+  <div class="field">
+    <%= f.label :initial_weight, "体重(kg)" %>
+    <%= f.number_field :initial_weight, in: 48..110, step: 0.5, value: 65 %>
+  </div>
+  <div class="field">
+    <%= f.label :target_weight, "目標体重(kg)" %>
+    <%= f.number_field :target_weight, in: 45..90, value: 65 %>
+  </div>
+  <div class="field">
+    <%= f.label :weight_at_age_twenty, "20歳時の体重(kg)" %>
+    <%= f.number_field :weight_at_age_twenty, in: 48..110, value: 65 %>
+  </div>
+  <div class="field">
+    <%= f.label :max_weight, "過去最高体重(kg)" %>
+    <%= f.number_field :max_weight, in: 48..110, value: 65 %>
+  </div>
+  <div class="field">
+    <%= f.label :age_of_max_weight, "最高体重時の年齢" %>
+    <%= f.number_field :age_of_max_weight, in: 16..60, value: 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :reason, "ダイエットをしたい理由はなんですか" %>
+    <%= f.text_field :reason, placeholder: "できるだけ具体的に記入してください" %>
+  </div>
+  <div class="field">
+    <%= f.label :how_much_lose_weight, "1ヶ月で何キロ痩せたいですか" %>
+    <%= f.number_field :how_much_lose_weight, in: 1..9 %>
+  </div>
+  <div class="field">
+    <%= f.label :intensity_of_losing, "希望するダイエットの強度を選んでください" %>
+    <%= f.select :intensity_of_losing, {"美容的なダイエット" => 0, "健康的なダイエット" => 1, "出来る限り多く痩せたい" => 2} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

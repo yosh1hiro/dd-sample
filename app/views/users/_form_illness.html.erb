@@ -1,0 +1,40 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :illness, "現在、持病や過去に診断された病気はありますか" %>
+    <%= f.text_field :illness, placeholder: "高血圧と糖尿病" %>
+  </div>
+  <div class="field">
+    <%= f.label :medicine, "現在、常用している薬やサプリメントはありますか" %>
+    <%= f.text_field :medicine, placeholder: "常用していない場合は「無し」とご記入下さい" %>
+  </div>
+  <div class="field">
+    <%= f.label :allergy, "薬や食品でアレルギーはありますか" %>
+    <%= f.text_field :allergy, placeholder: "アレルギーがない場合は「無し」とご記入下さい" %>
+  </div>
+  <div class="field">
+    <%= f.label :stress, "現在感じているストレスはありますか" %>
+    <%= f.text_field :stress, placeholder: "例) 不眠で強いストレスがある。職場の人間関係で弱いストレスがある。" %>
+  </div>
+  <div class="field">
+    <%= f.label :smoking_custom, "喫煙習慣はありますか" %>
+    <%= f.select :smoking_custom, {"無し" => 0, "有り" => 1, "禁煙中" => 2} %>
+  </di>
+  <div class="field">
+    <%= f.label :smoking_condition, "喫煙者は1日当たりの本数と喫煙開始年齢を、禁煙者は禁煙期間をお答えください。" %>
+    <%= f.text_field :smoking_condition, placeholder: "例)　22歳から1日10本程度" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

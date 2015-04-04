@@ -1,0 +1,77 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>食習慣について下記よりお選びください</h3>
+  <div class="field">
+    <%= f.label :breakfast_custom, "朝食について"> %>
+    <%= f.select :breakfast_custom, {"食べない" => 0, "自炊または家族が作る" => 1, "インスタントや中食や外食が多い" => 2, "不規則" => 3} %>
+  </div>
+  <div class="field">
+    <%= f.label :breakfast_time, "朝食は何時頃に食べることが多いですか" %>
+    <%= f.time_field :breakfast_time %>
+  </div>
+  <div class="field">
+    <%= f.label :breakfast_staple, "主に何を食べることが多いですか" %>
+    <%= f.text_field :breakfast_staple %>
+  </div>
+  <div class="field">
+    <%= f.label :lunch_custom, "昼食について"> %>
+    <%= f.select :lunch_custom, {"食べない" => 0, "自炊または家族が作る" => 1, "インスタントや中食や外食が多い" => 2, "不規則" => 3} %>
+  </div>
+  <div class="field">
+    <%= f.label :lunch_time, "昼食は何時頃に食べることが多いですか" %>
+    <%= f.time_field :lunch_time %>
+  </div>
+  <div class="field">
+    <%= f.label :lunch_staple, "主に何を食べることが多いですか" %>
+    <%= f.text_field :lunch_staple %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner_custom, "夕食について"> %>
+    <%= f.select :dinner_custom, {"食べない" => 0, "自炊または家族が作る" => 1, "インスタントや中食や外食が多い" => 2, "不規則" => 3} %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner_time, "夕食は何時頃に食べることが多いですか" %>
+    <%= f.time_field :dinner_time %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner_staple, "主に何を食べることが多いですか" %>
+    <%= f.text_field :dinner_staple %>
+  </div>
+  <div class="field">
+    <%= f.label :between_meal, "間食を食べる習慣はありますか"> %>
+    <%= f.select :between_meal, {"食べない" => 0, "毎日食べる" => 1, "週に4回以上" => 2, "週に3回以下" => 3} %>
+  </div>
+  <div class="field">
+    <%= f.label :between_time, "間食は何時頃に食べることが多いですか" %>
+    <%= f.time_field :between_time %>
+  </div>
+  <div class="field">
+    <%= f.label :between_food, "間食は何をどれくらい食べますか" %>
+    <%= f.text_field :between_food, placeholder: "例) チョコレートを50gとオレンジジュースを1Lほど" %>
+  </div>
+  <div class="field">
+    <%= f.label :midnight_meal, "夜食を食べる習慣はありますか"> %>
+    <%= f.select :midnight_meal, {"食べない" => 0, "毎日食べる" => 1, "週に4回以上" => 2, "週に3回以下" => 3} %>
+  </div>
+  <div class="field">
+    <%= f.label :midnight_time, "夜食は何時頃に食べることが多いですか" %>
+    <%= f.time_field :midnight_time  %>
+  </div>
+  <div class="field">
+    <%= f.label :midnight_food, "夜食は何をどれくらい食べますか" %>
+    <%= f.text_field :midnight_food, placeholder: "例) 豚骨ラーメンを1杯" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
