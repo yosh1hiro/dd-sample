@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 20150401001916) do
     t.string   "smoking_condition"
     t.string   "contact_id"
     t.boolean  "doctor"
+    t.integer  "wake_time"
   end
 
   create_table "weights", force: true do |t|

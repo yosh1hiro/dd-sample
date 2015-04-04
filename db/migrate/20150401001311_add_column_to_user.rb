@@ -37,5 +37,6 @@ class AddColumnToUser < ActiveRecord::Migration
     add_column :users, :smoking_condition, :string
     add_column :users, :contact_id, :string
     add_column :users, :doctor, :boolean
+    add_column :users, :wake_time, :integer
   end
 end
