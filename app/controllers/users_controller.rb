@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'ユーザー登録が完了しました' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'ユーザー情報を更新しました' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'ユーザー情報を削除しました' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password_digest, :email, :gender, :occupation, :purpose, :height, :initial_weight, :target_weight, :current_weight, :loss_rate, :current_bmi, :ticket_count, :target_disease, :birthday, :auto_login_token, :initial_bmi, :pro_edition)
+      params.require(:user).permit(:name, :password_digest, :email, :gender, :occupation, :purpose, :height, :initial_weight, :target_weight, :current_weight, :loss_rate, :current_bmi, :ticket_count, :target_disease, :birthday, :auto_login_token, :initial_bmi, :pro_edition, :weight_at_age_twenty, :max_weight, :age_of_max_weight, :reason, :how_much_lose_weight, :intensity_of_losing, :sleep_time, :sleep_comment, :alcohole, :how_much_alcohole, :frequency_in_drink, :exercising_custom, :club_activity, :active_of_work, :breakfast_custom, :breakfast_time, :breakfast_staple)
     end
 end
