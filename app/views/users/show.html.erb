@@ -90,5 +90,158 @@
   <%= @user.pro_edition %>
 </p>
 
+<p>
+  20歳時の体重:<br>
+    <%= @user.weight_at_age_twenty %>
+    </p>
+
+    <p>
+      過去最大体重<br>
+        <%= @user.max_weight %>
+        </p>
+
+
+        <p>
+          過去最大体重時の年齢<br>
+            <%= @user.age_of_max_weight %>
+            </p>
+
+            <p>
+              ダイエット理由<br>
+                <%= @user.reason %>
+                </p>
+
+                <p>
+                  1ヶ月当たりの希望減量kg<br>
+                    <%= @user.how_much_lose_weight %>
+                    </p>
+                    <p>
+                      希望するダイエット強度<br>
+                        <%= @user.intensity_of_losing %>
+                        </p>
+                        <p>
+                          就寝時間<br>
+                            <%= @user.sleep_time %>
+                            </p>
+                            <p>
+                              起床時間<br>
+                                <%= @user.wake_time %>
+                                </p>
+                                <p>
+                                  睡眠時の悩み<br>
+                                    <%= @user.sleep_comment %>
+                                    </p>
+                                    <p>
+                                      アルコール<br>
+                                        <%= @user.alcohole %>
+                                        </p>
+                                        <p>
+                                          飲酒量<br>
+                                            <%= @user.how_much_alcohole %>
+                                            </p>
+                                            <p>
+                                              飲酒頻度<br>
+                                                <%= @user.frequency_in_drink %>
+                                                </p>
+                                                <p>
+                                                  運動週間<br>
+                                                    <%= @user.exercising_custom %>
+                                                    </p>
+                                                    <p>
+                                                      学生時の運動経験<br>
+                                                        <%= @user.club_activity %>
+                                                        </p>
+                                                        <p>
+                                                          仕事の活動量<br>
+                                                            <%= @user.active_of_work %>
+                                                            </p>
+
+                                                            <p>
+                                                              朝食の習慣<br>
+                                                                <%= @user.breakfast_custom %>
+                                                                </p>
+                                                                <p>
+                                                                  朝食の時間<br>
+                                                                    <%= @user.breakfast_time %>
+                                                                    </p>
+                                                                    <p>
+                                                                      朝食の主食<br>
+                                                                        <%= @user.breakfast_staple %>
+                                                                        </p>
+                                                                        <p>
+                                                                          昼食の習慣<br>
+                                                                            <%= @user.lunch_custom %>
+                                                                            </p>
+                                                                            <p>
+                                                                              昼食の時間<br>
+                                                                                <%= @user.lunch_time %>
+                                                                                </p>
+                                                                                <p>
+                                                                                  昼食の主食<br>
+                                                                                    <%= @user.lunch_staple %>
+                                                                                    </p>
+                                                                                    <p>
+                                                                                      夕食の習慣<br>
+                                                                                        <%= @user.dinner_custom %>
+                                                                                        </p>
+                                                                                        <p>
+                                                                                          夕食の時間<br>
+                                                                                            <%= @user.dinner_time %>
+                                                                                            </p>
+
+                                                                                            <p>
+                                                                                              夕食の主食<br>
+                                                                                                <%= @user.dinner_staple %>
+                                                                                                </p>
+                                                                                                <p>
+                                                                                                  間食について<br>
+                                                                                                    <%= @user.between_meal %>
+                                                                                                    </p>
+                                                                                                    <p>
+                                                                                                      間食の時間<br>
+                                                                                                        <%= @user.between_time %>
+                                                                                                        </p>
+                                                                                                        <p>
+                                                                                                          間食の食べ物<br>
+                                                                                                            <%= @user.between_food %>
+                                                                                                            </p>
+                                                                                                            <p>
+                                                                                                              夜食について<br>
+                                                                                                                <%= @user.midnight_meal %>
+                                                                                                                </p>
+
+                                                                                                                <p>
+                                                                                                                夜食の時間<br>
+                                                                                                                  <%= @user.midnight_time %>
+                                                                                                                  </p>
+                                                                                                                  <p>
+                                                                                                                    夜食の食べ物<br>
+                                                                                                                      <%= @user.midnight_food %>
+                                                                                                                      </p>
+                                                                                                                      <p>
+                                                                                                                        持病など<br>
+                                                                                                                          <%= @user.illness %>
+                                                                                                                          </p>
+                                                                                                                          <p>
+                                                                                                                            服薬している薬やサプリメントなど<br>
+                                                                                                                              <%= @user.medicine %>
+                                                                                                                              </p>
+                                                                                                                              <p>
+                                                                                                                                アレルギーについて<br>
+                                                                                                                                  <%= @user.allergy %>
+                                                                                                                                  </p>
+                                                                                                                                  <p>
+                                                                                                                                    ストレス<br>
+                                                                                                                                      <%= @user.stress %>
+                                                                                                                                      </p>
+                                                                                                                                      <p>
+                                                                                                                                        喫煙習慣<br>
+                                                                                                                                          <%= @user.smoking_custom %>
+                                                                                                                                          </p>
+
+                                                                                                                                          <p>
+                                                                                                                                            喫煙状況<br>
+                                                                                                                                              <%= @user.smoking_condition %>
+                                                                                                                                              </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
