@@ -11,17 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401001916) do
+ActiveRecord::Schema.define(version: 20150407074559) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id",                  null: false
     t.integer  "challenge_id",             null: false
     t.integer  "level_id",                 null: false
     t.integer  "star",         default: 0, null: false
-    t.integer  "year",                     null: false
-    t.integer  "month",                    null: false
-    t.integer  "date",                     null: false
-    t.integer  "time",                     null: false
+    t.date     "date",                     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "appointments", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "duedate"
+    t.boolean  "complete"
+    t.integer  "doctor"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -114,22 +121,9 @@ ActiveRecord::Schema.define(version: 20150401001916) do
     t.integer  "food_id",    null: false
     t.integer  "user_id",    null: false
     t.integer  "meal_code",  null: false
-    t.integer  "year",       null: false
-    t.integer  "month",      null: false
-    t.integer  "date",       null: false
-    t.integer  "time",       null: false
+    t.date     "date",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "skypes", force: true do |t|
-    t.integer  "user_id"
-    t.date     "appointment_date"
-    t.boolean  "completed"
-    t.string   "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "doctor_id"
   end
 
   create_table "users", force: true do |t|
@@ -196,10 +190,7 @@ ActiveRecord::Schema.define(version: 20150401001916) do
   create_table "weights", force: true do |t|
     t.integer  "user_id",    null: false
     t.float    "weight",     null: false
-    t.integer  "year",       null: false
-    t.integer  "month",      null: false
-    t.integer  "date",       null: false
-    t.integer  "time",       null: false
+    t.date     "date",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

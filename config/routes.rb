@@ -4,15 +4,11 @@ Rails.application.routes.draw do
 
   resource  :session, only: [:new, :create, :destroy]
 
-  resources :skypes
-
   resources :achievements
 
   resources :levels
 
   resources :challenges
-
-  resources :meal_records
 
   resources :foods
 
@@ -20,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :users do
     member do 
+      resources :meal_records
+      resources :appointments
       get 'new_diet_information'
       put 'diet_information'
       get 'new_lifestyle_information'
