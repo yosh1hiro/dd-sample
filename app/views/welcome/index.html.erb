@@ -1,2 +1,7 @@
 <h1>DietDoctor</h1>
 <p>ダイエットドクター</p>
+<% if signed_in? %>
+  <p><%= @user.name %>がログイン中</p>
+<% else %>
+  <p>ログインして</p>
+<% end %>

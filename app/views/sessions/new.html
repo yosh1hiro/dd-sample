@@ -1,13 +1,15 @@
-<div class="container">
-  <h2 class="form-signin-heading">ログイン</h2>
-  <div class="form-signin">
-    <%= form_tag(:session, :class => 'form-signin') do %>
-    <%= text_field_tag(:email, params[:email], :placeholder => "メールアドレス", :class => 'form-control') %>
-      <%= password_field_tag(:password, params[:password], :Placeholder => "パスワード", :class => 'form-control') %>
-      <%= submit_tag('ログイン', :class=>'btn btn-lg  btn-primary btn-block') %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary-" %>
     <% end %>
-    <div>
-      <%= render 'shared/flash_message' %>
-    </div>
+
   </div>
 </div>

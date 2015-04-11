@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
+  skip_before_action :signed_in_user
   def index
-    @user = User
+    if signed_in?
+      @user = current_user
+    end
   end
 end

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :signed_in_user, only: [:new, :create]
+
 
   # GET /users
   # GET /users.json
@@ -10,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -25,15 +29,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
+    if @user.save
+      sign_in @user
+      respond_to do |format|
         format.html { render :edit, notice: 'ユーザー登録が完了しました' }
         format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    else
+      render 'new'
     end
   end
 
@@ -42,7 +45,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to :root, notice: 'ユーザー情報を更新しました' }
+        format.html { redirect_to @user, notice: 'ユーザー情報を更新しました' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -122,6 +125,11 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password_digest, :email, :gender, :occupation, :purpose, :height, :initial_weight, :target_weight, :current_weight, :loss_rate, :current_bmi, :ticket_count, :target_disease, :birthday, :auto_login_token, :initial_bmi, :pro_edition, :weight_at_age_twenty, :max_weight, :age_of_max_weight, :reason, :how_much_lose_weight, :intensity_of_losing, :sleep_time, :sleep_comment, :alcohole, :how_much_alcohole, :frequency_in_drink, :exercising_custom, :club_activity, :active_of_work, :breakfast_custom, :breakfast_time, :breakfast_staple, :lunch_custom, :lunch_time, :lunch_staple, :dinner_custom, :dinner_time, :dinner_staple, :between_meal, :between_time, :between_food, :midnight_meal, :midnight_time, :midnight_food, :illness, :medicine, :allergy, :stress, :smoking_custom, :smoking_condition, :contact_id, :doctor, :wake_time)
+      params.require(:user).permit(:name, :password, :password_confirmation, :email, :gender, :occupation, :purpose, :height, :initial_weight, :target_weight, :current_weight, :loss_rate, :current_bmi, :ticket_count, :target_disease, :birthday, :auto_login_token, :initial_bmi, :pro_edition, :weight_at_age_twenty, :max_weight, :age_of_max_weight, :reason, :how_much_lose_weight, :intensity_of_losing, :sleep_time, :sleep_comment, :alcohole, :how_much_alcohole, :frequency_in_drink, :exercising_custom, :club_activity, :active_of_work, :breakfast_custom, :breakfast_time, :breakfast_staple, :lunch_custom, :lunch_time, :lunch_staple, :dinner_custom, :dinner_time, :dinner_staple, :between_meal, :between_time, :between_food, :midnight_meal, :midnight_time, :midnight_food, :illness, :medicine, :allergy, :stress, :smoking_custom, :smoking_condition, :contact_id, :doctor, :wake_time)
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
     end
 end

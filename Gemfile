@@ -31,7 +31,7 @@ gem 'activerecord-session_store'
 #pagenation
 gem "kaminari"
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
+gem 'bcrypt-ruby', '~> 3.1.5'
 
 #Sqliteからmysqlに移行
 gem 'yaml_db'
