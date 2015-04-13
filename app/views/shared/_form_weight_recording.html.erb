@@ -1,0 +1,12 @@
+<%= form_for(@weight) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :date, "日付選択" %>
+    <%= f.date_select :date, {}, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :weight, "体重入力" %>
+    <%= f.number_field :weight %>
+  </div>
+  <%= f.submit "更新", class: "btn btn-large btn-primary" %>
+<% end %>

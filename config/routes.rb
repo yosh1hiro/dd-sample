@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     member do 
       resources :meal_records
       resources :appointments
+      resources :weights
       get 'new_diet_information'
       put 'diet_information'
       get 'new_lifestyle_information'
