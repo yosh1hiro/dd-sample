@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     else
       flash.alert = 'メールアドレスまたはパスワードが正しくありません。'
       respond_to do |format|
-        format.html { render 'new' }
+        format.html { redirect_to signin_path }
         format.json { head 401 }
       end
     end
