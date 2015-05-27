@@ -2,13 +2,8 @@
 
 <p><%= @user.name %>さん</p>
 <h3>行動記録をつける</h3>
-<p>食事を記録する</p>
-<ul>
-  <li><%= link_to "朝食", root_path %></li>
-  <li><%= link_to "昼食", root_path %></li>
-  <li><%= link_to "夕食", root_path %></li>
-  <li><%= link_to "間食など", root_path %></li>
-</ul>
+<%= link_to "食事を記録する", new_meal_record_path %>
+
 <p>体重を記録する</p>
 <%= render 'shared/form_weight_recording' %>
 
@@ -17,4 +12,4 @@
 
 <p>過去の食事を見る<p>
 
-<p>体重を確認</p>
+<%= link_to "体重を確認", weights_path %>

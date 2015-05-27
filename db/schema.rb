@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407074559) do
+ActiveRecord::Schema.define(version: 20150420032407) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id",                  null: false
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(version: 20150407074559) do
     t.datetime "updated_at"
   end
 
+  create_table "food_recordings", force: true do |t|
+    t.integer  "food_id"
+    t.integer  "meal_record_id"
+    t.integer  "food_point"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "foods", force: true do |t|
     t.integer  "group",                             null: false
     t.integer  "score",                             null: false
@@ -118,9 +126,9 @@ ActiveRecord::Schema.define(version: 20150407074559) do
   end
 
   create_table "meal_records", force: true do |t|
-    t.integer  "food_id",    null: false
     t.integer  "user_id",    null: false
     t.integer  "meal_code",  null: false
+    t.integer  "meal_point"
     t.date     "date",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"

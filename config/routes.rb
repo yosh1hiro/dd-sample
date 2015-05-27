@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources  :sessions, only: [:new, :create, :destroy]
+  match '/signin', to: 'sessions#new', via: 'get'
+  match 'signout', to: 'sessions#destroy', via: :delete
 
   resources :achievements
 
@@ -29,8 +31,6 @@ Rails.application.routes.draw do
       put 'illness_information'
     end
   end
-  match '/signin', to: 'sessions#new', via: 'get'
-  match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

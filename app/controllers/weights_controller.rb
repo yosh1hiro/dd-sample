@@ -2,11 +2,11 @@ class WeightsController < ApplicationController
 
 
   def index
-    @weight = current_user.weight.all
+    @weight = current_user.weights.all
   end
 
   def create
-    @weight = current_user.weight.build(weight_params)
+    @weight = current_user.weights.build(weight_params)
     if @weight.save
       respond_to do |format|
         format.html { redirect_to user_path, notice: '体重を記録しました。' }

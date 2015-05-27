@@ -14,7 +14,10 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @weight = @user.weight.build
+    @weight = @user.weights.build
+    @meal_record = @user.meal_records.build
+    @food = Food.all
+    @food_recording = @meal_record.food_recordings.build
   end
 
   # GET /users/new

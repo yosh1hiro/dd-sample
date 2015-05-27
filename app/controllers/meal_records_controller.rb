@@ -4,7 +4,7 @@ class MealRecordsController < ApplicationController
   # GET /meal_records
   # GET /meal_records.json
   def index
-    @meal_records = MealRecord.all
+    @meal_records = current_user.meal_records.all
   end
 
   # GET /meal_records/1
@@ -14,17 +14,19 @@ class MealRecordsController < ApplicationController
 
   # GET /meal_records/new
   def new
-    @meal_record = MealRecord.new
+    @meal_record = Form::MealRecord.new
+    @food = Food.all
   end
 
   # GET /meal_records/1/edit
   def edit
+    @meal_record = Form::MealRecord.find(params[:id])
   end
 
   # POST /meal_records
   # POST /meal_records.json
   def create
-    @meal_record = MealRecord.new(meal_record_params)
+    @meal_record = Form::MealRecord.new(meal_record_params)
 
     respond_to do |format|
       if @meal_record.save
@@ -69,6 +71,6 @@ class MealRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_record_params
-      params.require(:meal_record).permit(:food_id, :user_id, :meal_code, :year, :month, :date, :time)
+      params.require(:meal_record).permit(:user_id, :meal_code, :date, food_recordings_attributes: [:id, :meal_record_id, :food_id])
     end
 end
